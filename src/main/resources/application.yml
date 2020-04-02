@@ -5,7 +5,7 @@ spring:
     username: root
     password: 123456
   redis:
-    host: 192.168.112.181
+    host: 192.168.1.94
     password: 123456
     port: 6379
     timeout: 3000
@@ -15,11 +15,11 @@ spring:
         max-idle: 10
         max-wait: 100000
   kafka:
-    bootstrap-servers: 192.168.112.181:9092
+    bootstrap-servers: 192.168.1.94:9092
     topic:
       Name: secKill #自定义topic名称
-      numPartitions: 0  #自定义分区
-      replicationFactor: 0 #自定义副本
+      numPartitions: 1  #自定义分区
+      replicationFactor: 1 #自定义副本
     producer:
       retries: 0
       batch-size: 16384

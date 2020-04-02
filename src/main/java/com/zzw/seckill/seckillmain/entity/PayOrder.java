@@ -1,5 +1,7 @@
 package com.zzw.seckill.seckillmain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
@@ -25,6 +27,7 @@ public class PayOrder extends Model<PayOrder> {
     /**
      * 秒杀商品id
      */
+    @TableId(value = "seckill_id", type = IdType.AUTO)
     private Long seckillId;
 
     /**

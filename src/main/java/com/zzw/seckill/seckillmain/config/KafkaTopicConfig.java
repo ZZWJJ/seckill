@@ -1,7 +1,10 @@
 package com.zzw.seckill.seckillmain.config;
 
+import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache.kafka.clients.admin.KafkaAdminClient;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.apache.kafka.common.internals.Topic;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +38,7 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic myTopic() {
         //第三个参数是副本数量，确保集群中配置的数目大于等于副本数量
+        System.out.println("=====开始创建Topic=====");
         return new NewTopic(topicName, numPartitions, (short) replicationFactor);
     }
 
